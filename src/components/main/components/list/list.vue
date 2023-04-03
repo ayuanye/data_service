@@ -1,25 +1,20 @@
 <template>
   <div class="user-avatar-dropdown">
     <Dropdown @on-click="handleClick">
-      <Badge :dot="!!messageUnreadCount">
-        <Avatar :src="userAvatar"/>
-      </Badge>
-      <Icon :size="30" type="md-arrow-dropdown"></Icon>
+      <span>监控台</span>
       <DropdownMenu slot="list">
         <DropdownItem name="message">
-          用户中心<Badge style="margin-left: 10px" :count="messageUnreadCount"></Badge>
+          实时监控<Badge style="margin-left: 10px" :count="messageUnreadCount"></Badge>
         </DropdownItem>
-        <DropdownItem name="logout">退出登录</DropdownItem>
+        <DropdownItem name="logout">我的快照</DropdownItem>
       </DropdownMenu>
     </Dropdown>
   </div>
 </template>
 
 <script>
-// import './user.less'
-// import { mapActions } from 'vuex'
 export default {
-  name: 'User',
+  name: 'List',
   props: {
     userAvatar: {
       type: String,
@@ -57,3 +52,8 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+.user-avatar-dropdown{
+  color: aliceblue;
+}
+</style>

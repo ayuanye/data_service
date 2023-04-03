@@ -1,8 +1,8 @@
 <template>
   <div class="error-store">
-    <Badge dot :count="countComputed">
+    <Badge  :count="countComputed">
       <Button type="text" @click="openErrorLoggerPage">
-        <Icon :size="20" type="ios-bug"/>
+        <Icon :size="20" type="ios-notifications-outline"/>
       </Button>
     </Badge>
   </div>
@@ -23,7 +23,8 @@ export default {
   },
   computed: {
     countComputed () {
-      return this.hasRead ? 0 : this.count
+      // return this.hasRead ? 0 : this.count
+      return 100
     }
   },
   methods: {
@@ -38,12 +39,15 @@ export default {
 
 <style lang="less">
 .error-store{
-  margin-right: 12px;
+  margin-right: 25px;
   .ivu-badge-dot{
-    top: 20px;
+    top: 10px;
   }
   .ivu-btn.ivu-btn-text{
     padding: 5px 1px 6px;
+  }
+  .ivu-badge-count{
+    top:5px;
   }
 }
 </style>

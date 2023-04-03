@@ -3,7 +3,7 @@
     <Dropdown trigger="click" @on-click="selectLang">
       <a href="javascript:void(0)">
         {{ title }}
-        <Icon :size="18" type="md-arrow-dropdown" />
+        <Icon :size="30" type="md-add" />
       </a>
       <DropdownMenu slot="list">
         <DropdownItem v-for="(value, key) in localList" :name="key" :key="`lang-${key}`">{{ value }}</DropdownItem>
@@ -20,15 +20,9 @@ export default {
   },
   data () {
     return {
-      langList: {
-        'zh-CN': '语言',
-        'zh-TW': '語言',
-        'en-US': 'Lang'
-      },
       localList: {
-        'zh-CN': '中文简体',
-        'zh-TW': '中文繁体',
-        'en-US': 'English'
+        '0':'创建新项目',
+        '1':'添加应用'
       }
     }
   },
@@ -39,7 +33,7 @@ export default {
   },
   computed: {
     title () {
-      return this.langList[this.lang]
+      // return this.langList[this.lang]
     }
   },
   methods: {

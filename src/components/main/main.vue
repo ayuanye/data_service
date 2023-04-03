@@ -1,33 +1,28 @@
 <template>
   <Layout style="height: 100%" class="main">
-    <Sider hide-trigger collapsible :width="256" :collapsed-width="64" v-model="collapsed" class="left-sider" :style="{overflow: 'hidden'}">
-      <side-menu accordion ref="sideMenu" :active-name="$route.name" :collapsed="collapsed" @on-select="turnToPage" :menu-list="menuList">
-        <!-- 需要放在菜单上面的内容，如Logo，写在side-menu标签内部，如下 -->
-        <div class="logo-con">
-          <img v-show="!collapsed" :src="maxLogo" key="max-logo" />
-          <img v-show="collapsed" :src="minLogo" key="min-logo" />
-        </div>
-      </side-menu>
-    </Sider>
     <Layout>
       <Header class="header-con">
         <header-bar :collapsed="collapsed" @on-coll-change="handleCollapsedChange">
           <user :message-unread-count="unreadCount" :user-avatar="userAvatar"/>
-          <language style="margin-right: 10px;" :lang="local"/>
-          <!-- <error-store :has-read="hasReadErrorPage" :count="errorCount"></error-store> -->
           <fullscreen v-model="isFullscreen" style="margin-right: 10px;"/>
+          <error-store :has-read="hasReadErrorPage" :count="errorCount" ></error-store>
+          <header-menu :menulist="list"></header-menu>
+          <language style="margin-right: 10px;" :lang="local"/>
+          <header-left style="float:left;margin-right:800px;">
+          </header-left>
         </header-bar>
+
       </Header>
       <Content class="main-content-con">
         <Layout class="main-layout-con">
           <div class="tag-nav-wrapper">
-            <tags-nav :value="$route" @input="handleClick" :list="tagNavList" @on-close="handleCloseTag"/>
+            <!-- <tags-nav :value="$route" @input="handleClick" :list="tagNavList" @on-close="handleCloseTag"/> -->
           </div>
           <Content class="content-wrapper">
             <keep-alive :include="cacheList">
               <router-view/>
             </keep-alive>
-            <ABackTop :height="100" :bottom="80" :right="50" container=".content-wrapper"></ABackTop>
+            <!-- <ABackTop :height="100" :bottom="80" :right="50" container=".content-wrapper"></ABackTop> -->
           </Content>
         </Layout>
       </Content>
@@ -35,8 +30,9 @@
   </Layout>
 </template>
 <script>
-import SideMenu from './components/side-menu'
 import HeaderBar from './components/header-bar'
+import HeaderMenu from './components/header-menu'
+import HeaderLeft from './components/header-left'
 import TagsNav from './components/tags-nav'
 import User from './components/user'
 import ABackTop from './components/a-back-top'
@@ -52,12 +48,13 @@ import './main.css'
 export default {
   name: 'Main',
   components: {
-    SideMenu,
     HeaderBar,
     Language,
     TagsNav,
     Fullscreen,
     ErrorStore,
+    HeaderLeft,
+    HeaderMenu,
     User,
     ABackTop
   },
@@ -66,7 +63,12 @@ export default {
       collapsed: false,
       minLogo,
       maxLogo,
-      isFullscreen: false
+      isFullscreen: false,
+      // list:[
+      //   {'0':'质控系统'},
+      //   {'1':'电商平台'},
+      //   {'2':'动态代码覆盖率'}
+      // ]
     }
   },
   computed: {
@@ -155,7 +157,6 @@ export default {
       // })
       this.setBreadCrumb(newRoute)
       // this.setTagNavList(getNewTagList(this.tagNavList, newRoute))
-      this.$refs.sideMenu.updateOpenName(newRoute.name)
     }
   },
   mounted () {
