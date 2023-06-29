@@ -1,30 +1,31 @@
-# data_service
+# 质控系统
 
-> A Vue.js project
+#### 介绍
+由vue+iview搭建的质控系统
 
-## Build Setup
+#### 软件架构
+软件架构说明
 
-``` bash
-# install dependencies
-npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+#### 安装教程
 
-# build for production with minification
-npm run build
+1.  xxxx
+2.  xxxx
+3.  xxxx
 
-# build for production and view the bundle analyzer report
-npm run build --report
+#### 使用说明
 
-# run unit tests
-npm run unit
+1.  xxxx
+2.  xxxx
+3.  xxxx
 
-# run e2e tests
-npm run e2e
+#### 参与贡献
 
-# run all tests
-npm test
-```
+1.  Fork 本仓库
+2.  新建 Feat_xxx 分支
+3.  提交代码
+4.  新建 Pull Request
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+#### 特技
+

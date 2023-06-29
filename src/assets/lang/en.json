@@ -1,0 +1,46 @@
+{
+  "title": "Analysis System",
+  "nav": {
+    "logInfo": "no log or exceptions",
+    "fullScreen": "full screen",
+    "normalScreen": "normal screen",
+    "PersonalCenter": "Personal center",
+    "setUp": "set up",
+    "logout": "logout",
+    "closeLeft": "close left",
+    "closeRight": "close right",
+    "closeOthers": "close others",
+    "closeAll": "close all"
+  },
+  "login": {
+    "userPlaceHolder": "please enter user name",
+    "passwordPlaceHolder": "please enter password",
+    "autoLogin": "auto login",
+    "forget": "forget password",
+    "login": "login"
+  },
+  "main": {
+    "datamaintenance": "datamaintenance",
+    "electmaintenance": "electmaintenance",
+    "overhaulmaintenance": "overhaulmaintenance",
+    "othermaintenance": "othermaintenance",
+    "statisticalanalysis": "statisticalanalysis",
+    "powersupply": "powersupply",
+    "oiltemperature": "oiltemperature",
+    "limitcount": "limitcount",
+    "overweight": "overweight",
+    "gridtrip": "gridtrip",
+    "powergrid": "powergrid",
+    "riskwarning": "riskwarning",
+    "extra": "extra",
+    "outputreport": "outputreport",
+    "dailyreport": "dailyreport",
+    "weeklyreport": "weeklyreport",
+    "spendsummer": "spendsummer",
+    "projectManag": "systemSetting",
+    "eleprijsecMan": "projectManagement",
+    "codeCoverage": "codeCoverage",
+    "menuManage":"menuManage",
+    "monitoringStation":"monitoringStation"
+  }
+}
